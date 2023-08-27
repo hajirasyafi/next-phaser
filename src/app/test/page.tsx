@@ -1,7 +1,7 @@
 "use client";
 import { NextPage } from "next";
 import { useEffect, useCallback, useState, useRef } from "react";
-import Phaser, { Game as GameType } from "phaser";
+import Phaser, { GameObjects, Game as GameType } from "phaser";
 import Bird from "@/components/objects/bird";
 import { Pipe } from "@/components/objects/pipe";
 // import GameScenes from "@/components/scenes/flappy-bird/gamescene";
@@ -173,9 +173,10 @@ class GameScenes extends Phaser.Scene {
         this
       );
     } else {
+
       Phaser.Actions.Call(
         this.pipes.getChildren(),
-        (pipe: Pipe) => {
+        (pipe: any) => {
           pipe.body.setVelocityX(0);
           console.log(pipe.body.velocity);
         },
