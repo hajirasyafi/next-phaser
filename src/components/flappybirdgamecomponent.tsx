@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Phaser, { Game as GameType } from "phaser";
 import { Bird } from "@/components/objects/bird";
 import { Pipe } from "@/components/objects/pipe";
-const GameComponent = () => {
+const FlappyBirdGameComponent = () => {
   const [game, setGame] = useState<GameType>();
   useEffect(() => {
     if (!game) {
@@ -257,4 +257,4 @@ class GameScenes extends Phaser.Scene {
     );
   }
 }
-export default GameComponent;
+export default FlappyBirdGameComponent;
