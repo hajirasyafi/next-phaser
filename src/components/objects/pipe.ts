@@ -1,3 +1,4 @@
+"use client";
 import { IImageConstructor } from "@/interfaces/image.interface";
 import Phaser from "phaser";
 

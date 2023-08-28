@@ -1,7 +1,8 @@
+"use client";
 import { IImageConstructor } from "@/interfaces/image.interface";
 import Phaser from "phaser";
 
-export default class Bird extends Phaser.GameObjects.Image {
+export class Bird extends Phaser.GameObjects.Image {
   public body!: Phaser.Physics.Arcade.Body;
   private jumpKey!: Phaser.Input.Keyboard.Key;
   private isDead!: boolean;
