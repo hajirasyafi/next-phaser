@@ -144,8 +144,7 @@ class GameScenes extends Phaser.Scene {
   private pipes!: Phaser.GameObjects.Group;
   private background!: Phaser.GameObjects.TileSprite;
   private textScore!: Phaser.GameObjects.BitmapText;
-  private timer!: Phaser.Time.TimerEvent;
-
+  public timer!: Phaser.Time.TimerEvent;
   constructor() {
     super({
       key: "GameScene",
@@ -190,6 +189,7 @@ class GameScenes extends Phaser.Scene {
   }
 
   update(): void {
+    console.log(this)
     if (!this.bird.getDead()) {
       this.background.tilePositionX += 4;
       this.bird.update();
@@ -207,7 +207,6 @@ class GameScenes extends Phaser.Scene {
         this.pipes.getChildren(),
         (pipe: any) => {
           pipe.body.setVelocityX(0);
-          console.log(pipe.body.velocity);
         },
         this
       );

@@ -169,6 +169,13 @@ class GameScene extends Phaser.Scene {
       "font",
       `Score: ${settings.score}`
     );
+    this.livesText = this.add.bitmapText(
+      10,
+      30,
+      'font',
+      `Lives: ${settings.lives}`,
+      8
+    );
   }
 }
 
