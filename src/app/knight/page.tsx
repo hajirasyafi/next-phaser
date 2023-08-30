@@ -3,15 +3,15 @@ import { NextPage } from "next";
 import dynamic from "next/dynamic";
 
 const DynamicGameComponent = dynamic(
-  () => import("@/components/scenes/flappybirdgamecomponent"),
+  () => import("@/components/gamescomponents/knightgamecomponent"),
   {
     ssr: false,
     loading: () => <></>,
   }
 );
 
-const TestPage: NextPage = () => {
+const KnightPage: NextPage = () => {
   return <DynamicGameComponent />;
 };
 
-export default TestPage;
+export default KnightPage;

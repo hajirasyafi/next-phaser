@@ -3,7 +3,7 @@ import { NextPage } from "next";
 import dynamic from "next/dynamic";
 
 const DynamicGameComponent = dynamic(
-  () => import("@/components/breakoutgamecomponent"),
+  () => import("@/components/gamescomponents/breakoutgamecomponent"),
   {
     ssr: false,
     loading: () => <></>,

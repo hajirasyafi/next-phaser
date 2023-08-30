@@ -15,6 +15,7 @@ export class Brick extends Phaser.GameObjects.Rectangle {
     );
     this.initPhysic();
     this.initRectangle();
+    this.scene.add.existing(this);
   }
   private initRectangle(): void {
     this.setOrigin(0);

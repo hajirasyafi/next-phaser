@@ -4,8 +4,8 @@
       {
         "type": "bitmapFont",
         "key": "font",
-        "textureURL": "./assets/font/font.png",
-        "fontDataURL": "./assets/font/font.fnt"
+        "textureURL": "./breakout/font/font.png",
+        "fontDataURL": "./breakout/font/font.fnt"
       }
     ]
   }

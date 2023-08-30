@@ -3,7 +3,7 @@ import { NextPage } from "next";
 import dynamic from "next/dynamic";
 
 const DynamicGameComponent = dynamic(
-  () => import("@/components/flappybirdgamecomponent"),
+  () => import("@/components/gamescomponents/flappybirdgamecomponent"),
   {
     ssr: false,
     loading: () => <></>,

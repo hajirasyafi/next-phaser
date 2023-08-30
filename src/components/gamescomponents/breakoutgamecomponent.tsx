@@ -1,15 +1,21 @@
 "use client";
 import Phaser, { Game as GameType } from "phaser";
 import { useEffect, useState } from "react";
-import { Ball } from "./objects/ball";
-import { Player } from "./objects/player";
-import { Brick } from "./objects/brick";
+import { Ball } from "@/components/objects/ball";
+import { Player } from "@/components/objects/player";
+import { Brick } from "@/components/objects/brick";
 
 const BRICK_COLORS: number[] = [0xf2e49b, 0xbed996, 0xf2937e, 0xffffff];
 
 const LEVELS = [
   {
-    BRICKS: [],
+    BRICKS: [
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+      0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+      1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+      2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3,
+      3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3,
+    ],
     HEIGHT: 8,
     WIDTH: 14,
   },
@@ -30,12 +36,14 @@ const BreakOutGameComponent = () => {
     if (!game) {
       const initPhaser = async () => {
         const Phaser = await import("phaser");
+        const boot = new BootScene();
+        const game = new GameScene();
         const PhaserGame = new Phaser.Game({
           type: Phaser.AUTO,
           parent: "gameContainer",
           width: 480,
           height: 640,
-          scene: [],
+          scene: [boot, game],
           scale: {
             mode: Phaser.Scale.FIT,
             autoCenter: Phaser.Scale.CENTER_BOTH,
@@ -44,7 +52,6 @@ const BreakOutGameComponent = () => {
             default: "arcade",
             arcade: {
               gravity: { y: 0, x: 0 },
-              debug: true,
             },
           },
           backgroundColor: "#98d687",
@@ -158,7 +165,7 @@ class GameScene extends Phaser.Scene {
       scene: this,
       x: +this.game.config.width / 2 - 20,
       y: +this.game.config.height - 50,
-      width: 50,
+      width: 480,
       height: 10,
     });
     this.ball = new Ball({ scene: this, x: 0, y: 0 }).setVisible(false);
@@ -172,10 +179,67 @@ class GameScene extends Phaser.Scene {
     this.livesText = this.add.bitmapText(
       10,
       30,
-      'font',
+      "font",
       `Lives: ${settings.lives}`,
       8
     );
+    this.physics.add.collider(this.player, this.ball);
+    this.physics.add.collider(
+      this.ball,
+      this.bricks,
+      this.ballBrickCollision,
+      null,
+      this
+    );
+    this.events.on("scoreChanged", this.updateScore, this);
+    this.events.on("livesChanged", this.updateLives, this);
+    this.physics.world.checkCollision.down = false;
+  }
+
+  update(): void {
+    this.player.update();
+
+    if (this.player.body.velocity.x !== 0 && !this.ball.visible) {
+      this.ball.setPosition(this.player.x, this.player.y - 200);
+      this.ball.applyInitVelocity();
+      this.ball.setVisible(true);
+    }
+
+    if (this.ball.y > (this.game.config.height as number)) {
+      settings.lives -= 1;
+      this.events.emit("livesChanged");
+      if (settings.lives === 0) {
+        // GameOver
+        this.gameOver();
+      } else {
+        this.player.body.setVelocity(0);
+        this.player.resetToStartPosition();
+        this.ball.setPosition(0, 0);
+        this.ball.body.setVelocity(0);
+        this.ball.setVisible(false);
+      }
+    }
+  }
+
+  private ballBrickCollision(ball: Ball, brick: Brick): void {
+    brick.destroy();
+    settings.score += 10;
+    this.events.emit("scoreChanged");
+    if (this.bricks.countActive() === 0) {
+      // all bricks are gone
+    }
+  }
+
+  private gameOver(): void {
+    this.scene.restart();
+  }
+
+  private updateScore(): void {
+    this.scoreText.setText(`Score: ${settings.score}`);
+  }
+
+  private updateLives(): void {
+    this.livesText.setText(`Lives: ${settings.lives}`);
   }
 }
 
