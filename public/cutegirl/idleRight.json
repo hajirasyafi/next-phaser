@@ -10,7 +10,7 @@
       "scale": 1,
       "frames": [
         {
-          "filename": "idleRight004.png",
+          "filename": "idleRight003.png",
           "rotated": false,
           "trimmed": true,
           "sourceSize": {
@@ -31,7 +31,7 @@
           }
         },
         {
-          "filename": "idleRight005.png",
+          "filename": "idleRight004.png",
           "rotated": false,
           "trimmed": true,
           "sourceSize": {
@@ -52,7 +52,7 @@
           }
         },
         {
-          "filename": "idleRight006.png",
+          "filename": "idleRight005.png",
           "rotated": false,
           "trimmed": true,
           "sourceSize": {
@@ -73,7 +73,7 @@
           }
         },
         {
-          "filename": "idleRight003.png",
+          "filename": "idleRight002.png",
           "rotated": false,
           "trimmed": true,
           "sourceSize": {
@@ -94,7 +94,7 @@
           }
         },
         {
-          "filename": "idleRight007.png",
+          "filename": "idleRight006.png",
           "rotated": false,
           "trimmed": true,
           "sourceSize": {
@@ -115,7 +115,7 @@
           }
         },
         {
-          "filename": "idleRight008.png",
+          "filename": "idleRight007.png",
           "rotated": false,
           "trimmed": true,
           "sourceSize": {
@@ -136,7 +136,7 @@
           }
         },
         {
-          "filename": "idleRight009.png",
+          "filename": "idleRight008.png",
           "rotated": false,
           "trimmed": true,
           "sourceSize": {
@@ -157,7 +157,7 @@
           }
         },
         {
-          "filename": "idleRight010.png",
+          "filename": "idleRight009.png",
           "rotated": false,
           "trimmed": true,
           "sourceSize": {
@@ -178,7 +178,7 @@
           }
         },
         {
-          "filename": "idleRight011.png",
+          "filename": "idleRight010.png",
           "rotated": false,
           "trimmed": true,
           "sourceSize": {
@@ -199,7 +199,7 @@
           }
         },
         {
-          "filename": "idleRight002.png",
+          "filename": "idleRight001.png",
           "rotated": false,
           "trimmed": true,
           "sourceSize": {
@@ -220,7 +220,7 @@
           }
         },
         {
-          "filename": "idleRight012.png",
+          "filename": "idleRight011.png",
           "rotated": false,
           "trimmed": true,
           "sourceSize": {
@@ -241,7 +241,7 @@
           }
         },
         {
-          "filename": "idleRight013.png",
+          "filename": "idleRight012.png",
           "rotated": false,
           "trimmed": true,
           "sourceSize": {
@@ -262,7 +262,7 @@
           }
         },
         {
-          "filename": "idleRight014.png",
+          "filename": "idleRight013.png",
           "rotated": false,
           "trimmed": true,
           "sourceSize": {
@@ -283,7 +283,7 @@
           }
         },
         {
-          "filename": "idleRight015.png",
+          "filename": "idleRight014.png",
           "rotated": false,
           "trimmed": true,
           "sourceSize": {
@@ -304,7 +304,7 @@
           }
         },
         {
-          "filename": "idleRight016.png",
+          "filename": "idleRight015.png",
           "rotated": false,
           "trimmed": true,
           "sourceSize": {
@@ -325,7 +325,7 @@
           }
         },
         {
-          "filename": "idleRight001.png",
+          "filename": "idleRight000.png",
           "rotated": false,
           "trimmed": true,
           "sourceSize": {

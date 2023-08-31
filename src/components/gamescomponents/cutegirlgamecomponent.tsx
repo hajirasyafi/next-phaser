@@ -28,10 +28,9 @@ const CuteGirlGameComponent: FC = () => {
             default: "arcade",
             arcade: {
               gravity: { y: 300 },
-              debug: true,
             },
           },
-          render: { antialias: true, pixelArt: true },
+          render: { antialias: true, pixelArt:false},
         });
         setGame(PhaserGame);
       };
@@ -46,10 +45,22 @@ class GameScene extends Phaser.Scene {
   public cuteGirl!: CuteGirl;
   public cursors!: Phaser.Types.Input.Keyboard.CursorKeys;
 
+  public isRuningRight!: boolean;
+  public isRuningLeft!: boolean;
+  public isIdleRight!:boolean;
+  public isIdleLeft!:boolean;
+
   constructor() {
     super({
       key: "GameScene",
     });
+  }
+
+  init():void {
+    this.isRuningRight = false;
+    this.isRuningLeft = false;
+    this.isIdleRight = true;
+    this.isIdleLeft = false;
   }
 
   preload(): void {
@@ -88,35 +99,53 @@ class GameScene extends Phaser.Scene {
       x: 980,
       y: 100,
       texture: "idleRight",
-      frame: 1,
     });
     const idleRight: Types.Animations.Animation = {
       key: "idleRight",
       frames: this.anims.generateFrameNames("idleRight", {
+        prefix: "idleRight",
+        suffix: ".png",
         start: 0,
         end: 15,
+        zeroPad: 3
       }),
+      repeat: -1
     };
     const idleLeft: Types.Animations.Animation = {
       key: "idleLeft",
       frames: this.anims.generateFrameNames("idleLeft", {
+        prefix: "idleLeft",
+        suffix: ".png",
         start: 0,
         end: 15,
+        zeroPad: 3,
       }),
+      repeat: -1
     };
     const runRight: Types.Animations.Animation = {
       key: "runRight",
       frames: this.anims.generateFrameNames("runRight", {
+        prefix: "runRight",
+        suffix: ".png",
         start: 0,
         end: 19,
+        zeroPad: 3
       }),
+      repeat: -1,
+      frameRate: 40
     };
     const runLeft: Types.Animations.Animation = {
       key: "runLeft",
       frames: this.anims.generateFrameNames("runLeft", {
+        prefix: "runLeft",
+        suffix: ".png",
         start: 0,
         end: 19,
+        zeroPad: 3
       }),
+      repeat: -1,
+      frameRate: 40
+
     };
     this.anims.create(idleRight);
     this.anims.create(idleLeft);
@@ -126,12 +155,31 @@ class GameScene extends Phaser.Scene {
   }
 
   update(time: number, delta: number): void {
-    if (this.cursors.right.isDown) {
-      this.cuteGirl.anims.play("runRight", true);
-      this.cuteGirl.body.setVelocityX(160);
-    } else if (this.cursors.left.isDown) {
-      this.cuteGirl.anims.play("runLeft", true);
-      this.cuteGirl.body.setVelocityX(-160);
+    if(this.cursors.right.isDown) {
+      this.isRuningRight = true;
+      this.isIdleRight = true;
+      this.isRuningLeft = false;
+    } else if(this.cursors.left.isDown) {
+      this.isRuningLeft = true;
+      this.isRuningRight = false;
+      this.isIdleRight = false;
+    } else {
+      this.isRuningRight = false;
+      this.isRuningLeft = false;
+    }
+    
+    if(this.isRuningRight) {
+      this.cuteGirl.anims.play("runRight", true)
+      this.cuteGirl.x +=10
+    } else if(this.isRuningLeft) {
+      this.cuteGirl.anims.play("runLeft", true)
+      this.cuteGirl.x -=10
+    } else {
+      if(this.isIdleRight) {
+        this.cuteGirl.anims.play("idleRight", true)
+      } else {
+        this.cuteGirl.anims.play("idleLeft", true)
+      }
     }
   }
 }

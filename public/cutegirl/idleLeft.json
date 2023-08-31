@@ -10,7 +10,7 @@
       "scale": 1,
       "frames": [
         {
-          "filename": "idleLeft004.png",
+          "filename": "idleLeft003.png",
           "rotated": false,
           "trimmed": true,
           "sourceSize": {
@@ -31,7 +31,7 @@
           }
         },
         {
-          "filename": "idleLeft005.png",
+          "filename": "idleLeft004.png",
           "rotated": false,
           "trimmed": true,
           "sourceSize": {
@@ -52,7 +52,7 @@
           }
         },
         {
-          "filename": "idleLeft006.png",
+          "filename": "idleLeft005.png",
           "rotated": false,
           "trimmed": true,
           "sourceSize": {
@@ -73,7 +73,7 @@
           }
         },
         {
-          "filename": "idleLeft003.png",
+          "filename": "idleLeft002.png",
           "rotated": false,
           "trimmed": true,
           "sourceSize": {
@@ -94,7 +94,7 @@
           }
         },
         {
-          "filename": "idleLeft007.png",
+          "filename": "idleLeft006.png",
           "rotated": false,
           "trimmed": true,
           "sourceSize": {
@@ -115,7 +115,7 @@
           }
         },
         {
-          "filename": "idleLeft008.png",
+          "filename": "idleLeft007.png",
           "rotated": false,
           "trimmed": true,
           "sourceSize": {
@@ -136,7 +136,7 @@
           }
         },
         {
-          "filename": "idleLeft009.png",
+          "filename": "idleLeft008.png",
           "rotated": false,
           "trimmed": true,
           "sourceSize": {
@@ -157,7 +157,7 @@
           }
         },
         {
-          "filename": "idleLeft010.png",
+          "filename": "idleLeft009.png",
           "rotated": false,
           "trimmed": true,
           "sourceSize": {
@@ -178,7 +178,7 @@
           }
         },
         {
-          "filename": "idleLeft011.png",
+          "filename": "idleLeft010.png",
           "rotated": false,
           "trimmed": true,
           "sourceSize": {
@@ -199,7 +199,7 @@
           }
         },
         {
-          "filename": "idleLeft002.png",
+          "filename": "idleLeft001.png",
           "rotated": false,
           "trimmed": true,
           "sourceSize": {
@@ -220,7 +220,7 @@
           }
         },
         {
-          "filename": "idleLeft012.png",
+          "filename": "idleLeft011.png",
           "rotated": false,
           "trimmed": true,
           "sourceSize": {
@@ -241,7 +241,7 @@
           }
         },
         {
-          "filename": "idleLeft013.png",
+          "filename": "idleLeft012.png",
           "rotated": false,
           "trimmed": true,
           "sourceSize": {
@@ -262,7 +262,7 @@
           }
         },
         {
-          "filename": "idleLeft014.png",
+          "filename": "idleLeft013.png",
           "rotated": false,
           "trimmed": true,
           "sourceSize": {
@@ -283,7 +283,7 @@
           }
         },
         {
-          "filename": "idleLeft015.png",
+          "filename": "idleLeft014.png",
           "rotated": false,
           "trimmed": true,
           "sourceSize": {
@@ -304,7 +304,7 @@
           }
         },
         {
-          "filename": "idleLeft016.png",
+          "filename": "idleLeft015.png",
           "rotated": false,
           "trimmed": true,
           "sourceSize": {
@@ -325,7 +325,7 @@
           }
         },
         {
-          "filename": "idleLeft001.png",
+          "filename": "idleLeft000.png",
           "rotated": false,
           "trimmed": true,
           "sourceSize": {
