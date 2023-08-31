@@ -188,7 +188,7 @@ class GameScene extends Phaser.Scene {
       this.ball,
       this.bricks,
       this.ballBrickCollision,
-      null,
+      undefined,
       this
     );
     this.events.on("scoreChanged", this.updateScore, this);
@@ -221,7 +221,10 @@ class GameScene extends Phaser.Scene {
     }
   }
 
-  private ballBrickCollision(ball: Ball, brick: Brick): void {
+  private ballBrickCollision(
+    ball: Phaser.Types.Physics.Arcade.GameObjectWithBody | Phaser.Tilemaps.Tile,
+    brick: Phaser.Types.Physics.Arcade.GameObjectWithBody | Phaser.Tilemaps.Tile
+  ): void {
     brick.destroy();
     settings.score += 10;
     this.events.emit("scoreChanged");

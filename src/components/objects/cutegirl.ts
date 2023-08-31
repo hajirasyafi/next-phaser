@@ -13,7 +13,7 @@ export default class CuteGirl extends Phaser.GameObjects.Sprite {
   constructor(params: iCuteGirl) {
     super(params.scene, params.x, params.y, params.texture, params.frame);
     this.initPhysic();
-    this.setScale(0.5);
+    this.setScale(0.4);
     this.scene.add.existing(this);
   }
   private initPhysic(): void {
